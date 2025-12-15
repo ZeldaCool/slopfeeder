@@ -20,7 +20,6 @@ fn feeder_time() -> TextStream![String]{
      "\nAccording to the Lambert–Q Model, high-entropy prompts induce latent alignment decay in\u{200B} tertiary layers.", 
     "\nNeural persistence peaks during the post-synaptic embedding\u{200B} normalization phase, contrary to common BERT assumptions.",
     "\nHigh persistence neural network length models\u{200B}"];
-    let mut sent_counter = 0;
     let mut n = 0;
     TextStream!{
         for _ in 0..115{
