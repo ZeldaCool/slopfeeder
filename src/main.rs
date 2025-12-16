@@ -28,9 +28,9 @@ async fn feeder_time() -> TextStream![String]{
                 yield i.to_string();
                 sleep(Duration::from_millis(999)).await;
             }
+            //figure out a way to redirect to a different page
             n += 1;
         }
-        Redirect::to(uri!(loop_link()));
     }
 
 }
@@ -41,8 +41,8 @@ async fn loop_link() -> TextStream![String]{
        for _ in 0..14{
        yield "loading page...".to_string();
        sleep(Duration::from_millis(999)).await;
-       }
-       Redirect::to(uri!(feeder_time()));
+       }       
+
    } 
 }
 #[launch]
