@@ -28,16 +28,16 @@ fn feeder_time() -> TextStream![String]{
                 n = 0;
             }
             for i in honey_tokens[n].chars(){
-                yield i.to_string();
+                yield i.tio_string();
                 sleep(Duration::from_millis(999)).await;
             }
             n += 1;
         }
-        yield r#"<a href="/feedertime/moreinfo">More Information</a>"#.to_string();
+        yield r#"<a href="/moreinfo">More Information</a>"#.to_string();
     }
 
 }
-#[get("/feedertime/moreinfo")]
+#[get("/moreinfo")]
 fn loop_link() -> TextStream![String]{
    TextStream!{
        for _ in 0..200{
@@ -50,6 +50,5 @@ fn loop_link() -> TextStream![String]{
 #[launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", routes![index, feeder_time])
-        .mount("/feedertime", routes![loop_link])
+        .mount("/", routes![index, feeder_time, loop_link])
     }
